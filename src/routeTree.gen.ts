@@ -9,50 +9,637 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as DashboardRouteRouteImport } from './routes/dashboard/route'
+import { Route as publicRouteRouteImport } from './routes/(public)/route'
+import { Route as blankRouteRouteImport } from './routes/(blank)/route'
+import { Route as DashboardIndexRouteImport } from './routes/dashboard/index'
+import { Route as publicIndexRouteImport } from './routes/(public)/index'
+import { Route as DashboardTablesRouteImport } from './routes/dashboard/tables'
+import { Route as DashboardSettingsRouteImport } from './routes/dashboard/settings'
+import { Route as DashboardReportsRouteImport } from './routes/dashboard/reports'
+import { Route as DashboardProductsRouteImport } from './routes/dashboard/products'
+import { Route as DashboardPosRouteImport } from './routes/dashboard/pos'
+import { Route as DashboardOrdersRouteImport } from './routes/dashboard/orders'
+import { Route as DashboardHooksRouteImport } from './routes/dashboard/hooks'
+import { Route as publicPrivacyRouteImport } from './routes/(public)/privacy'
+import { Route as publicAboutRouteImport } from './routes/(public)/about'
+import { Route as blankLoginRouteImport } from './routes/(blank)/login'
+import { Route as DashboardProductsIndexRouteImport } from './routes/dashboard/products/index'
+import { Route as DashboardHooksIndexRouteImport } from './routes/dashboard/hooks/index'
+import { Route as DashboardProductsListRouteImport } from './routes/dashboard/products/list'
+import { Route as DashboardProductsCreateRouteImport } from './routes/dashboard/products/create'
+import { Route as DashboardProductsIdRouteImport } from './routes/dashboard/products/$id'
+import { Route as DashboardHooksUseRefRouteImport } from './routes/dashboard/hooks/use-ref'
+import { Route as DashboardHooksUseReducerRouteImport } from './routes/dashboard/hooks/use-reducer'
+import { Route as DashboardHooksUseMemoRouteImport } from './routes/dashboard/hooks/use-memo'
+import { Route as DashboardHooksUseEffectRouteImport } from './routes/dashboard/hooks/use-effect'
+import { Route as DashboardHooksUseContextRouteImport } from './routes/dashboard/hooks/use-context'
+import { Route as DashboardHooksUseCallbackRouteImport } from './routes/dashboard/hooks/use-callback'
+import { Route as DashboardHooksForwardRefRouteImport } from './routes/dashboard/hooks/forward-ref'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const DashboardRouteRoute = DashboardRouteRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const publicRouteRoute = publicRouteRouteImport.update({
+  id: '/(public)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const blankRouteRoute = blankRouteRouteImport.update({
+  id: '/(blank)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardIndexRoute = DashboardIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const publicIndexRoute = publicIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => publicRouteRoute,
+} as any)
+const DashboardTablesRoute = DashboardTablesRouteImport.update({
+  id: '/tables',
+  path: '/tables',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardSettingsRoute = DashboardSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardReportsRoute = DashboardReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardProductsRoute = DashboardProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardPosRoute = DashboardPosRouteImport.update({
+  id: '/pos',
+  path: '/pos',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardOrdersRoute = DashboardOrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const DashboardHooksRoute = DashboardHooksRouteImport.update({
+  id: '/hooks',
+  path: '/hooks',
+  getParentRoute: () => DashboardRouteRoute,
+} as any)
+const publicPrivacyRoute = publicPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => publicRouteRoute,
+} as any)
+const publicAboutRoute = publicAboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => publicRouteRoute,
+} as any)
+const blankLoginRoute = blankLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => blankRouteRoute,
+} as any)
+const DashboardProductsIndexRoute = DashboardProductsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardProductsRoute,
+} as any)
+const DashboardHooksIndexRoute = DashboardHooksIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DashboardHooksRoute,
+} as any)
+const DashboardProductsListRoute = DashboardProductsListRouteImport.update({
+  id: '/list',
+  path: '/list',
+  getParentRoute: () => DashboardProductsRoute,
+} as any)
+const DashboardProductsCreateRoute = DashboardProductsCreateRouteImport.update({
+  id: '/create',
+  path: '/create',
+  getParentRoute: () => DashboardProductsRoute,
+} as any)
+const DashboardProductsIdRoute = DashboardProductsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => DashboardProductsRoute,
+} as any)
+const DashboardHooksUseRefRoute = DashboardHooksUseRefRouteImport.update({
+  id: '/use-ref',
+  path: '/use-ref',
+  getParentRoute: () => DashboardHooksRoute,
+} as any)
+const DashboardHooksUseReducerRoute =
+  DashboardHooksUseReducerRouteImport.update({
+    id: '/use-reducer',
+    path: '/use-reducer',
+    getParentRoute: () => DashboardHooksRoute,
+  } as any)
+const DashboardHooksUseMemoRoute = DashboardHooksUseMemoRouteImport.update({
+  id: '/use-memo',
+  path: '/use-memo',
+  getParentRoute: () => DashboardHooksRoute,
+} as any)
+const DashboardHooksUseEffectRoute = DashboardHooksUseEffectRouteImport.update({
+  id: '/use-effect',
+  path: '/use-effect',
+  getParentRoute: () => DashboardHooksRoute,
+} as any)
+const DashboardHooksUseContextRoute =
+  DashboardHooksUseContextRouteImport.update({
+    id: '/use-context',
+    path: '/use-context',
+    getParentRoute: () => DashboardHooksRoute,
+  } as any)
+const DashboardHooksUseCallbackRoute =
+  DashboardHooksUseCallbackRouteImport.update({
+    id: '/use-callback',
+    path: '/use-callback',
+    getParentRoute: () => DashboardHooksRoute,
+  } as any)
+const DashboardHooksForwardRefRoute =
+  DashboardHooksForwardRefRouteImport.update({
+    id: '/forward-ref',
+    path: '/forward-ref',
+    getParentRoute: () => DashboardHooksRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/dashboard': typeof DashboardRouteRouteWithChildren
+  '/login': typeof blankLoginRoute
+  '/about': typeof publicAboutRoute
+  '/privacy': typeof publicPrivacyRoute
+  '/dashboard/hooks': typeof DashboardHooksRouteWithChildren
+  '/dashboard/orders': typeof DashboardOrdersRoute
+  '/dashboard/pos': typeof DashboardPosRoute
+  '/dashboard/products': typeof DashboardProductsRouteWithChildren
+  '/dashboard/reports': typeof DashboardReportsRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/tables': typeof DashboardTablesRoute
+  '/': typeof publicIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/hooks/forward-ref': typeof DashboardHooksForwardRefRoute
+  '/dashboard/hooks/use-callback': typeof DashboardHooksUseCallbackRoute
+  '/dashboard/hooks/use-context': typeof DashboardHooksUseContextRoute
+  '/dashboard/hooks/use-effect': typeof DashboardHooksUseEffectRoute
+  '/dashboard/hooks/use-memo': typeof DashboardHooksUseMemoRoute
+  '/dashboard/hooks/use-reducer': typeof DashboardHooksUseReducerRoute
+  '/dashboard/hooks/use-ref': typeof DashboardHooksUseRefRoute
+  '/dashboard/products/$id': typeof DashboardProductsIdRoute
+  '/dashboard/products/create': typeof DashboardProductsCreateRoute
+  '/dashboard/products/list': typeof DashboardProductsListRoute
+  '/dashboard/hooks/': typeof DashboardHooksIndexRoute
+  '/dashboard/products/': typeof DashboardProductsIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/login': typeof blankLoginRoute
+  '/about': typeof publicAboutRoute
+  '/privacy': typeof publicPrivacyRoute
+  '/dashboard/orders': typeof DashboardOrdersRoute
+  '/dashboard/pos': typeof DashboardPosRoute
+  '/dashboard/reports': typeof DashboardReportsRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/tables': typeof DashboardTablesRoute
+  '/': typeof publicIndexRoute
+  '/dashboard': typeof DashboardIndexRoute
+  '/dashboard/hooks/forward-ref': typeof DashboardHooksForwardRefRoute
+  '/dashboard/hooks/use-callback': typeof DashboardHooksUseCallbackRoute
+  '/dashboard/hooks/use-context': typeof DashboardHooksUseContextRoute
+  '/dashboard/hooks/use-effect': typeof DashboardHooksUseEffectRoute
+  '/dashboard/hooks/use-memo': typeof DashboardHooksUseMemoRoute
+  '/dashboard/hooks/use-reducer': typeof DashboardHooksUseReducerRoute
+  '/dashboard/hooks/use-ref': typeof DashboardHooksUseRefRoute
+  '/dashboard/products/$id': typeof DashboardProductsIdRoute
+  '/dashboard/products/create': typeof DashboardProductsCreateRoute
+  '/dashboard/products/list': typeof DashboardProductsListRoute
+  '/dashboard/hooks': typeof DashboardHooksIndexRoute
+  '/dashboard/products': typeof DashboardProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/(blank)': typeof blankRouteRouteWithChildren
+  '/(public)': typeof publicRouteRouteWithChildren
+  '/dashboard': typeof DashboardRouteRouteWithChildren
+  '/(blank)/login': typeof blankLoginRoute
+  '/(public)/about': typeof publicAboutRoute
+  '/(public)/privacy': typeof publicPrivacyRoute
+  '/dashboard/hooks': typeof DashboardHooksRouteWithChildren
+  '/dashboard/orders': typeof DashboardOrdersRoute
+  '/dashboard/pos': typeof DashboardPosRoute
+  '/dashboard/products': typeof DashboardProductsRouteWithChildren
+  '/dashboard/reports': typeof DashboardReportsRoute
+  '/dashboard/settings': typeof DashboardSettingsRoute
+  '/dashboard/tables': typeof DashboardTablesRoute
+  '/(public)/': typeof publicIndexRoute
+  '/dashboard/': typeof DashboardIndexRoute
+  '/dashboard/hooks/forward-ref': typeof DashboardHooksForwardRefRoute
+  '/dashboard/hooks/use-callback': typeof DashboardHooksUseCallbackRoute
+  '/dashboard/hooks/use-context': typeof DashboardHooksUseContextRoute
+  '/dashboard/hooks/use-effect': typeof DashboardHooksUseEffectRoute
+  '/dashboard/hooks/use-memo': typeof DashboardHooksUseMemoRoute
+  '/dashboard/hooks/use-reducer': typeof DashboardHooksUseReducerRoute
+  '/dashboard/hooks/use-ref': typeof DashboardHooksUseRefRoute
+  '/dashboard/products/$id': typeof DashboardProductsIdRoute
+  '/dashboard/products/create': typeof DashboardProductsCreateRoute
+  '/dashboard/products/list': typeof DashboardProductsListRoute
+  '/dashboard/hooks/': typeof DashboardHooksIndexRoute
+  '/dashboard/products/': typeof DashboardProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/dashboard'
+    | '/login'
+    | '/about'
+    | '/privacy'
+    | '/dashboard/hooks'
+    | '/dashboard/orders'
+    | '/dashboard/pos'
+    | '/dashboard/products'
+    | '/dashboard/reports'
+    | '/dashboard/settings'
+    | '/dashboard/tables'
+    | '/'
+    | '/dashboard/'
+    | '/dashboard/hooks/forward-ref'
+    | '/dashboard/hooks/use-callback'
+    | '/dashboard/hooks/use-context'
+    | '/dashboard/hooks/use-effect'
+    | '/dashboard/hooks/use-memo'
+    | '/dashboard/hooks/use-reducer'
+    | '/dashboard/hooks/use-ref'
+    | '/dashboard/products/$id'
+    | '/dashboard/products/create'
+    | '/dashboard/products/list'
+    | '/dashboard/hooks/'
+    | '/dashboard/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/login'
+    | '/about'
+    | '/privacy'
+    | '/dashboard/orders'
+    | '/dashboard/pos'
+    | '/dashboard/reports'
+    | '/dashboard/settings'
+    | '/dashboard/tables'
+    | '/'
+    | '/dashboard'
+    | '/dashboard/hooks/forward-ref'
+    | '/dashboard/hooks/use-callback'
+    | '/dashboard/hooks/use-context'
+    | '/dashboard/hooks/use-effect'
+    | '/dashboard/hooks/use-memo'
+    | '/dashboard/hooks/use-reducer'
+    | '/dashboard/hooks/use-ref'
+    | '/dashboard/products/$id'
+    | '/dashboard/products/create'
+    | '/dashboard/products/list'
+    | '/dashboard/hooks'
+    | '/dashboard/products'
+  id:
+    | '__root__'
+    | '/(blank)'
+    | '/(public)'
+    | '/dashboard'
+    | '/(blank)/login'
+    | '/(public)/about'
+    | '/(public)/privacy'
+    | '/dashboard/hooks'
+    | '/dashboard/orders'
+    | '/dashboard/pos'
+    | '/dashboard/products'
+    | '/dashboard/reports'
+    | '/dashboard/settings'
+    | '/dashboard/tables'
+    | '/(public)/'
+    | '/dashboard/'
+    | '/dashboard/hooks/forward-ref'
+    | '/dashboard/hooks/use-callback'
+    | '/dashboard/hooks/use-context'
+    | '/dashboard/hooks/use-effect'
+    | '/dashboard/hooks/use-memo'
+    | '/dashboard/hooks/use-reducer'
+    | '/dashboard/hooks/use-ref'
+    | '/dashboard/products/$id'
+    | '/dashboard/products/create'
+    | '/dashboard/products/list'
+    | '/dashboard/hooks/'
+    | '/dashboard/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  blankRouteRoute: typeof blankRouteRouteWithChildren
+  publicRouteRoute: typeof publicRouteRouteWithChildren
+  DashboardRouteRoute: typeof DashboardRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(public)': {
+      id: '/(public)'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof publicRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/(blank)': {
+      id: '/(blank)'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof blankRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/': {
+      id: '/dashboard/'
+      path: '/'
+      fullPath: '/dashboard/'
+      preLoaderRoute: typeof DashboardIndexRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/(public)/': {
+      id: '/(public)/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof publicIndexRouteImport
+      parentRoute: typeof publicRouteRoute
+    }
+    '/dashboard/tables': {
+      id: '/dashboard/tables'
+      path: '/tables'
+      fullPath: '/dashboard/tables'
+      preLoaderRoute: typeof DashboardTablesRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/settings': {
+      id: '/dashboard/settings'
+      path: '/settings'
+      fullPath: '/dashboard/settings'
+      preLoaderRoute: typeof DashboardSettingsRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/reports': {
+      id: '/dashboard/reports'
+      path: '/reports'
+      fullPath: '/dashboard/reports'
+      preLoaderRoute: typeof DashboardReportsRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/products': {
+      id: '/dashboard/products'
+      path: '/products'
+      fullPath: '/dashboard/products'
+      preLoaderRoute: typeof DashboardProductsRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/pos': {
+      id: '/dashboard/pos'
+      path: '/pos'
+      fullPath: '/dashboard/pos'
+      preLoaderRoute: typeof DashboardPosRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/orders': {
+      id: '/dashboard/orders'
+      path: '/orders'
+      fullPath: '/dashboard/orders'
+      preLoaderRoute: typeof DashboardOrdersRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/dashboard/hooks': {
+      id: '/dashboard/hooks'
+      path: '/hooks'
+      fullPath: '/dashboard/hooks'
+      preLoaderRoute: typeof DashboardHooksRouteImport
+      parentRoute: typeof DashboardRouteRoute
+    }
+    '/(public)/privacy': {
+      id: '/(public)/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof publicPrivacyRouteImport
+      parentRoute: typeof publicRouteRoute
+    }
+    '/(public)/about': {
+      id: '/(public)/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof publicAboutRouteImport
+      parentRoute: typeof publicRouteRoute
+    }
+    '/(blank)/login': {
+      id: '/(blank)/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof blankLoginRouteImport
+      parentRoute: typeof blankRouteRoute
+    }
+    '/dashboard/products/': {
+      id: '/dashboard/products/'
+      path: '/'
+      fullPath: '/dashboard/products/'
+      preLoaderRoute: typeof DashboardProductsIndexRouteImport
+      parentRoute: typeof DashboardProductsRoute
+    }
+    '/dashboard/hooks/': {
+      id: '/dashboard/hooks/'
+      path: '/'
+      fullPath: '/dashboard/hooks/'
+      preLoaderRoute: typeof DashboardHooksIndexRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/products/list': {
+      id: '/dashboard/products/list'
+      path: '/list'
+      fullPath: '/dashboard/products/list'
+      preLoaderRoute: typeof DashboardProductsListRouteImport
+      parentRoute: typeof DashboardProductsRoute
+    }
+    '/dashboard/products/create': {
+      id: '/dashboard/products/create'
+      path: '/create'
+      fullPath: '/dashboard/products/create'
+      preLoaderRoute: typeof DashboardProductsCreateRouteImport
+      parentRoute: typeof DashboardProductsRoute
+    }
+    '/dashboard/products/$id': {
+      id: '/dashboard/products/$id'
+      path: '/$id'
+      fullPath: '/dashboard/products/$id'
+      preLoaderRoute: typeof DashboardProductsIdRouteImport
+      parentRoute: typeof DashboardProductsRoute
+    }
+    '/dashboard/hooks/use-ref': {
+      id: '/dashboard/hooks/use-ref'
+      path: '/use-ref'
+      fullPath: '/dashboard/hooks/use-ref'
+      preLoaderRoute: typeof DashboardHooksUseRefRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/hooks/use-reducer': {
+      id: '/dashboard/hooks/use-reducer'
+      path: '/use-reducer'
+      fullPath: '/dashboard/hooks/use-reducer'
+      preLoaderRoute: typeof DashboardHooksUseReducerRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/hooks/use-memo': {
+      id: '/dashboard/hooks/use-memo'
+      path: '/use-memo'
+      fullPath: '/dashboard/hooks/use-memo'
+      preLoaderRoute: typeof DashboardHooksUseMemoRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/hooks/use-effect': {
+      id: '/dashboard/hooks/use-effect'
+      path: '/use-effect'
+      fullPath: '/dashboard/hooks/use-effect'
+      preLoaderRoute: typeof DashboardHooksUseEffectRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/hooks/use-context': {
+      id: '/dashboard/hooks/use-context'
+      path: '/use-context'
+      fullPath: '/dashboard/hooks/use-context'
+      preLoaderRoute: typeof DashboardHooksUseContextRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/hooks/use-callback': {
+      id: '/dashboard/hooks/use-callback'
+      path: '/use-callback'
+      fullPath: '/dashboard/hooks/use-callback'
+      preLoaderRoute: typeof DashboardHooksUseCallbackRouteImport
+      parentRoute: typeof DashboardHooksRoute
+    }
+    '/dashboard/hooks/forward-ref': {
+      id: '/dashboard/hooks/forward-ref'
+      path: '/forward-ref'
+      fullPath: '/dashboard/hooks/forward-ref'
+      preLoaderRoute: typeof DashboardHooksForwardRefRouteImport
+      parentRoute: typeof DashboardHooksRoute
     }
   }
 }
 
+interface blankRouteRouteChildren {
+  blankLoginRoute: typeof blankLoginRoute
+}
+
+const blankRouteRouteChildren: blankRouteRouteChildren = {
+  blankLoginRoute: blankLoginRoute,
+}
+
+const blankRouteRouteWithChildren = blankRouteRoute._addFileChildren(
+  blankRouteRouteChildren,
+)
+
+interface publicRouteRouteChildren {
+  publicAboutRoute: typeof publicAboutRoute
+  publicPrivacyRoute: typeof publicPrivacyRoute
+  publicIndexRoute: typeof publicIndexRoute
+}
+
+const publicRouteRouteChildren: publicRouteRouteChildren = {
+  publicAboutRoute: publicAboutRoute,
+  publicPrivacyRoute: publicPrivacyRoute,
+  publicIndexRoute: publicIndexRoute,
+}
+
+const publicRouteRouteWithChildren = publicRouteRoute._addFileChildren(
+  publicRouteRouteChildren,
+)
+
+interface DashboardHooksRouteChildren {
+  DashboardHooksForwardRefRoute: typeof DashboardHooksForwardRefRoute
+  DashboardHooksUseCallbackRoute: typeof DashboardHooksUseCallbackRoute
+  DashboardHooksUseContextRoute: typeof DashboardHooksUseContextRoute
+  DashboardHooksUseEffectRoute: typeof DashboardHooksUseEffectRoute
+  DashboardHooksUseMemoRoute: typeof DashboardHooksUseMemoRoute
+  DashboardHooksUseReducerRoute: typeof DashboardHooksUseReducerRoute
+  DashboardHooksUseRefRoute: typeof DashboardHooksUseRefRoute
+  DashboardHooksIndexRoute: typeof DashboardHooksIndexRoute
+}
+
+const DashboardHooksRouteChildren: DashboardHooksRouteChildren = {
+  DashboardHooksForwardRefRoute: DashboardHooksForwardRefRoute,
+  DashboardHooksUseCallbackRoute: DashboardHooksUseCallbackRoute,
+  DashboardHooksUseContextRoute: DashboardHooksUseContextRoute,
+  DashboardHooksUseEffectRoute: DashboardHooksUseEffectRoute,
+  DashboardHooksUseMemoRoute: DashboardHooksUseMemoRoute,
+  DashboardHooksUseReducerRoute: DashboardHooksUseReducerRoute,
+  DashboardHooksUseRefRoute: DashboardHooksUseRefRoute,
+  DashboardHooksIndexRoute: DashboardHooksIndexRoute,
+}
+
+const DashboardHooksRouteWithChildren = DashboardHooksRoute._addFileChildren(
+  DashboardHooksRouteChildren,
+)
+
+interface DashboardProductsRouteChildren {
+  DashboardProductsIdRoute: typeof DashboardProductsIdRoute
+  DashboardProductsCreateRoute: typeof DashboardProductsCreateRoute
+  DashboardProductsListRoute: typeof DashboardProductsListRoute
+  DashboardProductsIndexRoute: typeof DashboardProductsIndexRoute
+}
+
+const DashboardProductsRouteChildren: DashboardProductsRouteChildren = {
+  DashboardProductsIdRoute: DashboardProductsIdRoute,
+  DashboardProductsCreateRoute: DashboardProductsCreateRoute,
+  DashboardProductsListRoute: DashboardProductsListRoute,
+  DashboardProductsIndexRoute: DashboardProductsIndexRoute,
+}
+
+const DashboardProductsRouteWithChildren =
+  DashboardProductsRoute._addFileChildren(DashboardProductsRouteChildren)
+
+interface DashboardRouteRouteChildren {
+  DashboardHooksRoute: typeof DashboardHooksRouteWithChildren
+  DashboardOrdersRoute: typeof DashboardOrdersRoute
+  DashboardPosRoute: typeof DashboardPosRoute
+  DashboardProductsRoute: typeof DashboardProductsRouteWithChildren
+  DashboardReportsRoute: typeof DashboardReportsRoute
+  DashboardSettingsRoute: typeof DashboardSettingsRoute
+  DashboardTablesRoute: typeof DashboardTablesRoute
+  DashboardIndexRoute: typeof DashboardIndexRoute
+}
+
+const DashboardRouteRouteChildren: DashboardRouteRouteChildren = {
+  DashboardHooksRoute: DashboardHooksRouteWithChildren,
+  DashboardOrdersRoute: DashboardOrdersRoute,
+  DashboardPosRoute: DashboardPosRoute,
+  DashboardProductsRoute: DashboardProductsRouteWithChildren,
+  DashboardReportsRoute: DashboardReportsRoute,
+  DashboardSettingsRoute: DashboardSettingsRoute,
+  DashboardTablesRoute: DashboardTablesRoute,
+  DashboardIndexRoute: DashboardIndexRoute,
+}
+
+const DashboardRouteRouteWithChildren = DashboardRouteRoute._addFileChildren(
+  DashboardRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  blankRouteRoute: blankRouteRouteWithChildren,
+  publicRouteRoute: publicRouteRouteWithChildren,
+  DashboardRouteRoute: DashboardRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

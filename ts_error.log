@@ -1,0 +1,1 @@
+src/layouts/dashboard-layout.tsx(3,37): error TS6133: 'AppRoute' is declared but its value is never read.
