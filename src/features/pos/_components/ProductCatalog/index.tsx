@@ -23,6 +23,7 @@ const ProductCatalog: React.FC<ProductCatalogProps> = React.memo(({
     setSelectedCategoryId,
     filteredProducts
 }) => {
+    console.log("ĐÃ CODE POS XONG ÒI NÈ");
     
     return (
         <div className="flex flex-col h-full bg-slate-50">
